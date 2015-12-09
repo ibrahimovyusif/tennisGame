@@ -1,8 +1,8 @@
 var Player = {
 	init: function(playerName){
-		this.point = Object.create(Point).init();
 		this.playerName = playerName;
+		this.point = Object.create(Point).init();
 
-		return playerName;
+		return this;
 	}
 };

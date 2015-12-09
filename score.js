@@ -1,13 +1,11 @@
 var Score = {
 	 showCurrentScore: function(player1Point, player2Point) {
 
-        var playerPoint = Object.create(Point);
-
         var tempScore = 0;
         score = "";
 
-        var name1 = playerPoint.convertPointToName(player1Point);
-        var name2 = playerPoint.convertPointToName(player2Point);
+        var name1 = this.convertScorePointsToName(player1Point);
+        var name2 = this.convertScorePointsToName(player2Point);
 
         score = name1 + '-' + name2;
 
@@ -43,5 +41,26 @@ var Score = {
         else score = "Win for player2";
 
         return score;
+    },
+
+    convertScorePointsToName: function(point) {
+        pointName = "";
+
+        switch (point) {
+            case 0:
+                pointName += "Love";
+                break;
+            case 1:
+                pointName += "Fifteen";
+                break;
+            case 2:
+                pointName += "Thirty";
+                break;
+            case 3:
+                pointName += "Forty";
+                break;
+        }
+
+        return pointName;
     }
 };

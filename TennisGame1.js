@@ -1,21 +1,22 @@
 var TennisGame1 = {
     init: function(player1Name, player2Name) {
         var player = Object.create(Player);
-        var playerPoint = Object.create(Point);
 
+        var player1 = player.init(player1Name);
+        var player2 = player.init(player2Name);
 
-        this.player1Name = player.init(player1Name);
-        this.player1Point = playerPoint.init();
+        this.player1Point = player1.point;
+        this.player1Name = player1.playerName;
 
-        this.player2Name = player.init(player2Name); 
-        this.player2Point = playerPoint.init();
+        this.player2Point = player2.point;
+        this.player2Name = player2.playerName;
     },
 
     wonPoint: function(playerName){
         if (playerName === this.player1Name)
-            this.player1Point++;
-        else
             this.player2Point++;
+        else
+            this.player1Point++;
     },
 
     getScore: function(){
