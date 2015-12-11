@@ -21,31 +21,31 @@ var allScores = [
     [0, 2, "Love-Thirty"],
     [3, 0, "Forty-Love"],
     [0, 3, "Love-Forty"],
-    [4, 0, "Win for player1"],
+    [4, 0, "Win for yusif"],
     [0, 4, "Win for player2"],
 
     [2, 1, "Thirty-Fifteen"],
     [1, 2, "Fifteen-Thirty"],
     [3, 1, "Forty-Fifteen"],
     [1, 3, "Fifteen-Forty"],
-    [4, 1, "Win for player1"],
+    [4, 1, "Win for yusif"],
     [1, 4, "Win for player2"],
 
     [3, 2, "Forty-Thirty"],
     [2, 3, "Thirty-Forty"],
-    [4, 2, "Win for player1"],
+    [4, 2, "Win for yusif"],
     [2, 4, "Win for player2"],
 
-    [4, 3, "Advantage player1"],
+    [4, 3, "Advantage yusif"],
     [3, 4, "Advantage player2"],
-    [5, 4, "Advantage player1"],
+    [5, 4, "Advantage yusif"],
     [4, 5, "Advantage player2"],
-    [15, 14, "Advantage player1"],
+    [15, 14, "Advantage yusif"],
     [14, 15, "Advantage player2"],
 
-    [6, 4, "Win for player1"],
+    [6, 4, "Win for yusif"],
     [4, 6, "Win for player2"],
-    [16, 14, "Win for player1"],
+    [16, 14, "Win for yusif"],
     [14, 16, "Win for player2"]
 ];
 
@@ -62,11 +62,11 @@ var checkScore = function(reporter, TennisGame, player1Score, player2Score, expe
         var addThisOne;
         game = Object.create(TennisGame1);
 
-        game.init("player1", "player2");
+        game.init("yusif", "player2");
 
         for (i = 0; i < highestScore; i++) {
             if (i < player1Score) {
-                game.wonPoint("player1");
+                game.wonPoint("yusif");
 
             }
             if (i < player2Score) {

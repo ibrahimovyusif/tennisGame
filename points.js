@@ -1,6 +1,6 @@
 var Point = {
-    init:function(point){
-        this.point = point || 0;
+    init:function(){
+        this.point = 0;
 
         return this.point;
     }

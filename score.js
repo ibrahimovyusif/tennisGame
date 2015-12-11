@@ -1,13 +1,38 @@
 var Score = {
-	 showCurrentScore: function(player1Point, player2Point) {
+    init: function(){
+        this.score = '';
+
+        return this.score;
+    },
+
+    calculateScore: function(player1, player2){
+        if (player1.point === player2.point) {
+
+            this.score = this.showCurrentEqualScore(player1.point);
+        } 
+
+        else if (player1.point >= 4 || player2.point >= 4) {
+
+            this.score =  this.showGameResult(player1, player2);
+        }
+
+        else {
+
+            this.score = this.showCurrentScore(player1, player2);
+        }
+
+        return this.score;
+    },
+
+	showCurrentScore: function(player1, player2) {
 
         var tempScore = 0;
         score = "";
 
-        var name1 = this.convertScorePointsToName(player1Point);
-        var name2 = this.convertScorePointsToName(player2Point);
+        var pointName1 = this.convertScorePointsToName(player1.point);
+        var pointName2 = this.convertScorePointsToName(player2.point);
 
-        score = name1 + '-' + name2;
+        score = pointName1 + '-' + pointName2;
 
 
         return score;
@@ -33,12 +58,12 @@ var Score = {
         return score;
     },
 
-    showGameResult: function(player1Point, player2Point) {
-        var minusResult = player1Point - player2Point;
-        if (minusResult === 1) score = "Advantage player1";
-        else if (minusResult === -1) score = "Advantage player2";
-        else if (minusResult >= 2) score = "Win for player1";
-        else score = "Win for player2";
+    showGameResult: function(player1, player2) {
+        var minusResult = player1.point - player2.point;
+        if (minusResult === 1) score = "Advantage " + player1.playerName;
+        else if (minusResult === -1) score = "Advantage " + player2.playerName;
+        else if (minusResult >= 2) score = "Win for " + player1.playerName;
+        else score = "Win for " + player2.playerName;
 
         return score;
     },

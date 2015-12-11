@@ -4,5 +4,9 @@ var Player = {
 		this.point = Object.create(Point).init();
 
 		return this;
+	},
+
+	getPoint: function() {
+		this.point++;
 	}
 };
